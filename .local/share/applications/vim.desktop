@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+NoDisplay=true
+Name=vim
+GenericName=Text Editor
+Comment=Edit text files
+Keywords=Text;editor;
+Exec=/usr/bin/terminator -e "/usr/bin/vim %F"
+Icon=gvim
+MimeType=text/plain
