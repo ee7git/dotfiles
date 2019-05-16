@@ -45,7 +45,7 @@ xcompmgr &
 (sleep 2 && tint2) &
 
 # Terminator
-(sleep 2 && terminator -m) &
+(sleep 2 && mate-terminal --maximize) &
 
 # Feh wallpaper
 slide_wallpaper() {

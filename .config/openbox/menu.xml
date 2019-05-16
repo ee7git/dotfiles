@@ -122,9 +122,9 @@
                 <execute>geany</execute>
 			</action>
 		</item>
-		<item label="Terminator">
+		<item label="Terminal">
 			<action name="Execute">
-				<execute>terminator -m</execute>
+				<execute>mate-terminal --maximize</execute>
 			</action>
 		</item>
 		<item label="Thunar">

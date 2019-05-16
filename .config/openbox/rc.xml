@@ -189,7 +189,7 @@
     </keybind>
     <keybind key="W-space">
       <action name="Execute">
-        <command>terminator -m</command>
+        <command>mate-terminal --maximize</command>
       </action>
     </keybind>
     <keybind key="A-F4">
