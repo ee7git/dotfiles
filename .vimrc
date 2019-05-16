@@ -14,7 +14,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ee7git/ee-vim-snippets'
+Plug 'ee7git/snippets'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
@@ -267,7 +267,7 @@ imap <cr> <plug>MyCR
 let g:UltiSnipsUsePythonVersion = 3
 
 " Only check for these dirs (faster)
-let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets/UltiSnips/', $HOME.'/.vim/plugged/ee-vim-snippets/UltiSnips/']
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets/UltiSnips/', $HOME.'/.vim/plugged/snippets/UltiSnips/']
 
 " Disable SnipMate snippets
 let g:UltiSnipsEnableSnipMate = 0
