@@ -54,6 +54,9 @@ set cmdheight=2         " Better display for messages
 "set signcolumn=yes     " Always show signcolumns
 "set updatetime=300     " Smaller updatetime for CursorHold & CursorHoldI
 
+autocmd BufRead,BufNewFile *.phtml set filetype=php
+autocmd BufRead,BufNewFile *.pinc set filetype=php
+
 " }}}
 
 " Save when losing focus
@@ -179,21 +182,21 @@ nnoremap <leader>s   :setlocal nospell<CR>
 " }}}
 "
 " Folding {{{
-set nofoldenable
-set foldlevelstart=0
-set foldlevel=2
-set foldcolumn=0
-set foldmethod=indent
-set foldopen-=search
-set foldopen-=undo
+"set nofoldenable
+"set foldlevelstart=0
+"set foldlevel=2
+"set foldcolumn=0
+"set foldmethod=indent
+"set foldopen-=search
+"set foldopen-=undo
 
 " Set ,z to toggle all folds on/off
-nnoremap <leader>z zi
-vnoremap <leader>z zi
+"nnoremap <leader>z zi
+"vnoremap <leader>z zi
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
-nnoremap zO zCzO
+"nnoremap zO zCzO
 
 " "Focus" the current line.  Basically:
 "
@@ -205,7 +208,7 @@ nnoremap zO zCzO
 " This mapping wipes out the z mark, which I never use.
 "
 " I use :sus for the rare times I want to actually background Vim.
-nnoremap <c-z> mzzMzvzz15<c-e>`z<cr>
+"nnoremap <c-z> mzzMzvzz15<c-e>`z<cr>
 
 " }}}
 
@@ -246,7 +249,7 @@ let g:airline_theme = 'luna'
 "snip": SnipMate snippets.
 "ulti": UltiSnips snippets.
 
-let g:mucomplete#chains = { 'default' : ['path', 'ulti', 'incl'] }
+let g:mucomplete#chains = { 'default' : ['ulti', 'incl', 'defs', 'file', 'path'] }
 
 set completeopt+=menuone
 set shortmess+=c    " Shut off completion messages
