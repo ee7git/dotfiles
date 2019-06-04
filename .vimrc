@@ -14,12 +14,13 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ee7git/snippets'
+Plug 'wjes/snippets'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'scrooloose/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'prettier/vim-prettier'
+"Plug 'prettier/vim-prettier'
+Plug 'sheerun/vim-polyglot'
 "Plug 'prettier/prettier-eslint'
 Plug 'BarretRen/vim-colorscheme'
 Plug 'w0rp/ale'
@@ -249,7 +250,7 @@ let g:airline_theme = 'luna'
 "snip": SnipMate snippets.
 "ulti": UltiSnips snippets.
 
-let g:mucomplete#chains = { 'default' : ['ulti', 'incl', 'defs', 'file', 'path'] }
+let g:mucomplete#chains = { 'default' : ['ulti', 'incl', 'defs', 'file', 'path', 'tags', 'line'] }
 
 set completeopt+=menuone
 set shortmess+=c    " Shut off completion messages
@@ -297,14 +298,26 @@ let g:prettier#autoformat = 0
 highlight ALEErrorSign ctermbg=NONE ctermfg=red
 highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
-let g:ale_linters = {
-\   'javascript': ['eslint']
-\ }
+" https://freshman.tech/vim-javascript/
+
+"let g:ale_linter_aliases = { 'html': ['html', 'javascript', 'css'] }
+"let g:ale_linters = {
+"\   'javascript': ['eslint']}
+"\   'typescript': ['tsserver'],
+"\   'graphql' : ['eslint']
+"\ }
 
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint']
-\ }
+\   'javascript': ['eslint']}
+
+"\   'graphql': ['prettier'],
+"\   'css': ['prettier'],
+"\   'scss': ['prettier'],
+"\   'typescript': ['prettier'],
+"\   'json': ['prettier'],
+"\   'html': ['prettier']
+"\ }
 
 let g:ale_fix_on_save = 1
 
@@ -324,11 +337,9 @@ let g:ale_lint_on_enter = 0
 let g:ale_sign_warning = '>'
 let g:ale_sign_info = 'I'
 
-"let g:ale_linter_aliases = {'html': ['html', 'javascript', 'css']}
-
 " For error navigations
-"nmap <silent> <leader>aj :ALENext<cr>
-"nmap <silent> <leader>ak :ALEPrevious<cr>
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
 
 " Remap keys for gotos
 nnoremap <silent> <leader>d :ALEGoToDefinition<cr>
