@@ -1,8 +1,9 @@
-" Started from Ben Hilburn's vimrc.
-" https://github.com/bhilburn/dotfiles/blob/master/vim/vimrc
-
 " Ignore compatibility issues with Vi
 set nocompatible
+set modelines=0
+
+" For security reasons
+set nomodeline
 
 " Vim plug settings ---------------------- {{{
 
@@ -12,18 +13,39 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+
+" UltiSnips & Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'wjes/snippets'
+
+" Autocompletion
 Plug 'lifepillar/vim-mucomplete'
+
+" Navigation
 Plug 'scrooloose/nerdtree'
+
+" Style
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'prettier/vim-prettier'
-Plug 'sheerun/vim-polyglot'
-"Plug 'prettier/prettier-eslint'
 Plug 'BarretRen/vim-colorscheme'
+
+" Editor config
+Plug 'editorconfig/editorconfig-vim'
+
+" Highlights
+"Plug 'sheerun/vim-polyglot'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leshill/vim-json'
+
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" The master
 Plug 'w0rp/ale'
+
 call plug#end()
 
 " }}}
@@ -44,38 +66,31 @@ set splitright
 
 set cursorline          " Show row highlight
 set cursorcolumn        " Show column highlight
-set scrolloff=5         " See 5 lines above/below the edge
+set scrolloff=7         " See 5 lines above/below the edge
 
 set encoding=utf-8
-set fillchars=diff:⣿,vert:│
-set listchars=tab:▸\ ,trail:·,extends:❯,precedes:❮
-"set showbreak=↪
 
 set cmdheight=2         " Better display for messages
 "set signcolumn=yes     " Always show signcolumns
 "set updatetime=300     " Smaller updatetime for CursorHold & CursorHoldI
 
-autocmd BufRead,BufNewFile *.phtml set filetype=php
-autocmd BufRead,BufNewFile *.pinc set filetype=php
-
-" }}}
+"autocmd BufRead,BufNewFile *.phtml set filetype=php
+"autocmd BufRead,BufNewFile *.pinc set filetype=php
 
 " Save when losing focus
-au FocusLost * :silent! wall
+"au FocusLost * :silent! wall
 
 " Resize splits when the window is resized
-au VimResized * :wincmd =
+"au VimResized * :wincmd =
 
-" Spacing and tabbing {{{
+" Spacing and tabbing 
 set expandtab
 set smarttab
-set softtabstop=4
-set tabstop=4
-set shiftwidth=4
-" }}}
+set softtabstop=2
+set tabstop=2
+set shiftwidth=2
 
-" Backup Files {{{
-
+" Backup Files
 set backup                       " enable backups
 
 set undodir=~/.vim/tmp/undo/     " undo files
@@ -93,13 +108,7 @@ if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
 
-" Some servers have issues with backup files
-"set nobackup
-"set nowritebackup
-
-" }}}
-
-" Colors {{{
+" Colors 
 set t_Co=256
 
 colorscheme monokai
@@ -108,9 +117,8 @@ colorscheme monokai
 hi Normal ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi NonText ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 hi LineNr ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
-" }}}
 
-" Abbreviations (hehe) {{{
+" Abbreviations (hehe)
 iabbrev emomg ಠ_ಠ
 iabbrev emsad ಥ_ಥ
 iabbrev emhap ಥ‿ಥ
@@ -121,34 +129,12 @@ iabbrev emmis ಠ‿ಠ
 
 let mapleader = ',' " Change the <leader> key
 
+" Make sure the following keys don't do anything
 :map <f10> <nop>
 :map! <f10> <nop>
 
-" "Uppercase word" mapping.
-"
-" This mapping allows you to press <c-u> in insert mode to convert the current
-" word to uppercase.  It's handy when you're writing names of constants and
-" don't want to use Capslock.
-"
-" To use it you type the name of the constant in lowercase.  While your
-" cursor is at the end of the word, press <c-u> to uppercase it, and then
-" continue happily on your way:
-"
-"                            cursor
-"                            v
-"     max_connections_allowed|
-"     <c-u>
-"     MAX_CONNECTIONS_ALLOWED|
-"                            ^
-"                            cursor
-"
-" It works by exiting out of insert mode, recording the current cursor location
-" in the z mark, using gUiw to uppercase inside the current word, moving back to
-" the z mark, and entering insert mode again.
-"
-" Note that this will overwrite the contents of the z mark.  I never use it, but
-" if you do you'll probably want to use another mark.
-inoremap <C-u> <esc>mzgUiw`za
+:map <f7> <nop>
+:map! <f7> <nop>
 
 " Typos
 command! -bang E e<bang>
@@ -160,10 +146,6 @@ command! -bang Wa wa<bang>
 command! -bang WA wa<bang>
 command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
-
-" Some love to my spanish hand (delete this after custom keyboard)
-inoremap <silent> ñ /
-inoremap <silent> Ñ ñ
 
 " Easy buffer navigation
 noremap <leader>h <C-W>h
@@ -181,8 +163,9 @@ nnoremap <leader>i   :setlocal spell spelllang=en<CR>
 nnoremap <leader>s   :setlocal nospell<CR>
 
 " }}}
-"
+
 " Folding {{{
+
 "set nofoldenable
 "set foldlevelstart=0
 "set foldlevel=2
@@ -213,8 +196,6 @@ nnoremap <leader>s   :setlocal nospell<CR>
 
 " }}}
 
-
-
 " Airline settings ----------------------- {{{
 
 " TODO - Make the powerline fonts work
@@ -226,37 +207,74 @@ let g:airline_theme = 'luna'
 
 " }}}
 
-" Mucomplete settings -------------------- {{{
+" Fzf ------------------------------------- {{{
 
-"c-n" : keywords in 'complete' (search forwards);
-"c-p" : keywords in 'complete' (search backwards);
-"cmd" : Vim command line;
-"defs": definitions or macros;
-"dict": keywords in 'dictionary';
-"file": file names;
-"incl": keywords in the current and included files;
-"keyn": keywords in the current file (search forwards);
-"keyp": keywords in the current file (search backwards);
-"line": whole lines;
-"omni": omni completion ('omnifunc');
-"spel": spelling suggestions;
-"tags": tags;
-"thes": keywords in 'thesaurus';
-"user": user defined completion ('completefunc').
-"path": file names (MUcomplete's implementation).
-"uspl": spelling suggestions (MUcomplete's implementation).
-"list": complete words from |b:mucomplete_wordlist| or |g:mucomplete#wordlist|.
-"nsnp": Neosnippet snippets.
-"snip": SnipMate snippets.
-"ulti": UltiSnips snippets.
+" Since I can't make the command to ignore node_module
+silent! nmap <C-P> :GFiles<CR>
 
-let g:mucomplete#chains = { 'default' : ['ulti', 'incl', 'defs', 'file', 'path', 'tags', 'line'] }
+" }}}
+
+" Vim Javascript -------------------------- {{{
+
+"let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+
+"let g:javascript_conceal_function             = "ƒ"
+"let g:javascript_conceal_null                 = "ø"
+"let g:javascript_conceal_this                 = "@"
+"let g:javascript_conceal_return               = "⇚"
+"let g:javascript_conceal_undefined            = "¿"
+"let g:javascript_conceal_NaN                  = "ℕ"
+"let g:javascript_conceal_prototype            = "¶"
+"let g:javascript_conceal_static               = "•"
+"let g:javascript_conceal_super                = "Ω"
+"let g:javascript_conceal_arrow_function       = "⇒"
+"let g:javascript_conceal_noarg_arrow_function = "🞅"
+"let g:javascript_conceal_underscore_arrow_function = "🞅"
+"
+"set conceallevel=1
+"map <leader>c :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
+
+" }}}
+
+" Vim JSX --------------------------------- {{{
+
+" Allow use .js extension instead of .jsx
+let g:jsx_ext_required = 0
+
+" }}}
+
+"" Mucomplete settings -------------------- {{{
+"
+""c-n" : keywords in 'complete' (search forwards);
+""c-p" : keywords in 'complete' (search backwards);
+""cmd" : Vim command line;
+""defs": definitions or macros;
+""dict": keywords in 'dictionary';
+""file": file names;
+""incl": keywords in the current and included files;
+""keyn": keywords in the current file (search forwards);
+""keyp": keywords in the current file (search backwards);
+""line": whole lines;
+""omni": omni completion ('omnifunc');
+""spel": spelling suggestions;
+""tags": tags;
+""thes": keywords in 'thesaurus';
+""user": user defined completion ('completefunc').
+""path": file names (MUcomplete's implementation).
+""uspl": spelling suggestions (MUcomplete's implementation).
+""list": complete words from |b:mucomplete_wordlist| or |g:mucomplete#wordlist|.
+""nsnp": Neosnippet snippets.
+""snip": SnipMate snippets.
+""ulti": UltiSnips snippets.
+"
+let g:mucomplete#chains = { 'default' : ['path', 'ulti', 'snip', 'omni', 'incl', 'keyn', 'dict', 'uspl'] }
 
 set completeopt+=menuone
 set shortmess+=c    " Shut off completion messages
 set belloff+=ctrlg  " If Vim beeps during completion
 set completeopt+=noselect
-
+"
 let g:mucomplete#enable_auto_at_startup = 1
 
 " Select the snippet with enter
@@ -274,7 +292,7 @@ let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsSnippetDirectories = [$HOME.'/.vim/plugged/vim-snippets/UltiSnips/', $HOME.'/.vim/plugged/snippets/UltiSnips/']
 
 " Disable SnipMate snippets
-let g:UltiSnipsEnableSnipMate = 0
+"let g:UltiSnipsEnableSnipMate = 0
 
 " On the fly snippets edition window
 let g:UltiSnipsEditSplit = "vertical"
@@ -285,7 +303,7 @@ let g:UltiSnipsJumpForwardTrigger = "<f10>"  " Do not use <c-j>
 
 " Include the js-node snippets to all js files
 autocmd FileType javascript UltiSnipsAddFiletypes javascript-node
-autocmd FileType javascript UltiSnipsAddFiletypes javascript-jsdoc
+"autocmd FileType javascript UltiSnipsAddFiletypes javascript-jsdoc
 
 " Save before saving
 let g:prettier#autoformat = 0
@@ -300,28 +318,14 @@ highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 " https://freshman.tech/vim-javascript/
 
+"set completeopt=menu,menuone,preview,noselect,noinsert
+
 "let g:ale_linter_aliases = { 'html': ['html', 'javascript', 'css'] }
-"let g:ale_linters = {
-"\   'javascript': ['eslint']}
-"\   'typescript': ['tsserver'],
-"\   'graphql' : ['eslint']
-"\ }
 
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint']}
 
-"\   'graphql': ['prettier'],
-"\   'css': ['prettier'],
-"\   'scss': ['prettier'],
-"\   'typescript': ['prettier'],
-"\   'json': ['prettier'],
-"\   'html': ['prettier']
-"\ }
-
-let g:ale_fix_on_save = 1
-
-" We're using UltiSnips
+" We're using mucomplete
 let g:ale_completion_enabled = 0
 
 " No highlighting the row
@@ -330,8 +334,10 @@ let g:ale_set_highlights = 0
 " Airline will handle the display
 let g:airline#extensions#ale#enabled = 1
 
+" When to fix
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_fix_on_save = 1
 
 " Signs
 let g:ale_sign_warning = '>'
