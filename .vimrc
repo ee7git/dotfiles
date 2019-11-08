@@ -60,6 +60,7 @@ set noshowmode          " Since we have airline
 set wrap                " Wrap
 set linebreak           " Wrap only in the line breaks
 set nolist              " list disables linebreak
+set shortmess+=A        " Avoid the annoying warning from existing swap file
 
 set splitbelow
 set splitright
@@ -154,8 +155,8 @@ noremap <leader>k <C-W>k
 noremap <leader>l <C-W>l
 
 " Easy tab navigation
-nnoremap <C-S-tab> :tabprevious<CR>
-nnoremap <C-tab>   :tabnext<CR>
+nnoremap <S-tab> :tabprevious<CR>
+nnoremap <tab>   :tabnext<CR>
 
 " Spell checker
 nnoremap <leader>e   :setlocal spell spelllang=es<CR>
