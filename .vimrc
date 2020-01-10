@@ -13,6 +13,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/dbext.vim'
 
 " UltiSnips & Snippets
 Plug 'SirVer/ultisnips'
@@ -28,7 +29,7 @@ Plug 'scrooloose/nerdtree'
 " Style
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'BarretRen/vim-colorscheme'
+"Plug 'BarretRen/vim-colorscheme'
 
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
@@ -51,6 +52,7 @@ call plug#end()
 " }}}
 
 " Global settings ------------------------ {{{
+
 
 set number              " Show current line number
 set relativenumber      " Show relative line numbers
@@ -112,7 +114,16 @@ endif
 " Colors 
 set t_Co=256
 
-colorscheme monokai
+" PHP syntaz alias
+autocmd BufNewFile,BufRead *.pinc,*.phtml set syntax=php
+
+" Automatic fold save/load
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+
+"colorscheme monokai
+"colorscheme gruvbox
+colorscheme plastic
 
 " Transparent background
 hi Normal ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
@@ -162,6 +173,10 @@ nnoremap <tab>   :tabnext<CR>
 nnoremap <leader>e   :setlocal spell spelllang=es<CR>
 nnoremap <leader>i   :setlocal spell spelllang=en<CR>
 nnoremap <leader>s   :setlocal nospell<CR>
+
+" Number and relative number
+nnoremap <leader>n :set nonumber norelativenumber<CR>
+nnoremap <leader>N :set number relativenumber<CR>
 
 " }}}
 
@@ -384,3 +399,7 @@ call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " }}}
+
+"let g:loaded_sql_completion = 0
+"let g:omni_sql_no_default_maps = 1
+"let g:ftplugin_sql_omni_key = '<Leader>sql'
