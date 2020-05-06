@@ -1,11 +1,11 @@
 # Write your default config options here!
 
 # Set font.
-font=/usr/share/fonts/TTF/DejaVuSans.ttf
+#font=/usr/share/fonts/TTF/DejaVuSans.ttf
 
 # Set font encoding.
-subfont-encoding=unicode
+#subfont-encoding=unicode
 
 # Set subtitle file encoding.
-unicode=yes
-utf8=yes
+#unicode=yes
+#utf8=yes

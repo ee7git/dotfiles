@@ -285,6 +285,33 @@
           <to>previous</to>
         </action>
       </mousebind>
+      <!-- Keybindings for audio (ALSA) -->
+      <mousebind action="Click" button="C-Up">
+        <action name="Execute">
+          <command>amixer set Master 5%+ unmute</command>
+        </action>
+      </mousebind>
+      <mousebind action="Click" button="C-Down">
+        <action name="Execute">
+          <command>amixer set Master 5%- unmute</command>
+        </action>
+      </mousebind>
+      <mousebind action="Click" button="C-Middle">
+        <action name="Execute">
+          <command>amixer set Master toggle</command>
+        </action>
+      </mousebind>
+      <!-- Keybindings for brightness -->
+      <mousebind action="Click" button="A-Up">
+        <action name="Execute">
+          <command>xbacklight +10</command>
+        </action>
+      </mousebind>
+      <mousebind action="Click" button="A-Down">
+        <action name="Execute">
+        <command>xbacklight -10</command>
+        </action>
+      </mousebind>
     </context>
     <!-- ###### -->
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
@@ -369,14 +396,6 @@
     </context>
     <!-- ###### -->
     <context name="Close">
-      <mousebind action="Press" button="Left">
-        <action name="Focus"/>
-        <action name="Raise"/>
-        <action name="Unshade"/>
-      </mousebind>
-      <mousebind action="Click" button="Left">
-        <action name="Close"/>
-      </mousebind>
     </context>
     <!-- ###### -->
     <context name="Desktop">
@@ -397,6 +416,33 @@
       <mousebind action="Press" button="Right">
         <action name="Focus"/>
         <action name="Raise"/>
+      </mousebind>
+      <!-- Keybindings for audio (ALSA) -->
+      <mousebind action="Click" button="C-Up">
+        <action name="Execute">
+          <command>amixer set Master 5%+ unmute</command>
+        </action>
+      </mousebind>
+      <mousebind action="Click" button="C-Down">
+        <action name="Execute">
+          <command>amixer set Master 5%- unmute</command>
+        </action>
+      </mousebind>
+      <mousebind action="Click" button="C-Middle">
+        <action name="Execute">
+          <command>amixer set Master toggle</command>
+        </action>
+      </mousebind>
+      <!-- Keybindings for brightness -->
+      <mousebind action="Click" button="A-Up">
+        <action name="Execute">
+          <command>xbacklight +10</command>
+        </action>
+      </mousebind>
+      <mousebind action="Click" button="A-Down">
+        <action name="Execute">
+        <command>xbacklight -10</command>
+        </action>
       </mousebind>
     </context>
     <!-- ###### -->

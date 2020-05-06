@@ -97,10 +97,10 @@ alias dirm='docker image rm -f'
 alias dtest='docker build -t test . && docker container run -p 80:3000 -it --name testy test'
 alias dtestrm='docker container rm -f testy && docker image rm -f test'
 
-alias astng_ohaio='ssh -i "/home/warren/.ssh/astng.pem" ubuntu@ec2-18-219-244-226.us-east-2.compute.amazonaws.com'
-alias astng_brazil='ssh -i "/home/warren/.ssh/astng_brazil.pem" ubuntu@ec2-18-231-188-3.sa-east-1.compute.amazonaws.com'
-
-alias mysql_aws='mysql -u user -p -h host_name -P 3306'
+#alias astng_ohaio='ssh -i "/home/warren/.ssh/astng.pem" ubuntu@ec2-18-219-244-226.us-east-2.compute.amazonaws.com'
+#alias astng_brazil='ssh -i "/home/warren/.ssh/astng_brazil.pem" ubuntu@ec2-18-231-188-3.sa-east-1.compute.amazonaws.com'
+alias stng='ssh -i "/home/warren/.ssh/stng.pem" ubuntu@ec2-18-229-136-89.sa-east-1.compute.amazonaws.com'
+#alias mysql_aws='mysql -u user -p -h host_name -P 3306'
 
 PS1='[\u@\h \W]\$ '
 
