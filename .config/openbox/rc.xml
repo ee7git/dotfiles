@@ -301,18 +301,6 @@
           <command>amixer set Master toggle</command>
         </action>
       </mousebind>
-      <!-- Keybindings for brightness -->
-      <mousebind action="Click" button="A-Up">
-        <action name="Execute">
-          <command>xbacklight +10</command>
-        </action>
-      </mousebind>
-      <mousebind action="Click" button="A-Down">
-        <action name="Execute">
-        <command>xbacklight -10</command>
-        </action>
-      </mousebind>
-    </context>
     <!-- ###### -->
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
       <mousebind action="Press" button="Right">
@@ -433,18 +421,6 @@
           <command>amixer set Master toggle</command>
         </action>
       </mousebind>
-      <!-- Keybindings for brightness -->
-      <mousebind action="Click" button="A-Up">
-        <action name="Execute">
-          <command>xbacklight +10</command>
-        </action>
-      </mousebind>
-      <mousebind action="Click" button="A-Down">
-        <action name="Execute">
-        <command>xbacklight -10</command>
-        </action>
-      </mousebind>
-    </context>
     <!-- ###### -->
     <context name="Root">
       <!-- Menus -->
