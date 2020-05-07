@@ -121,8 +121,6 @@ autocmd BufNewFile,BufRead *.pinc,*.phtml set syntax=php
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
 
-"colorscheme monokai
-"colorscheme gruvbox
 colorscheme plastic
 
 " Transparent background

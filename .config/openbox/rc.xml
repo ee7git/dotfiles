@@ -301,6 +301,7 @@
           <command>amixer set Master toggle</command>
         </action>
       </mousebind>
+    </context>
     <!-- ###### -->
     <context name="Titlebar Top Right Bottom Left TLCorner TRCorner BRCorner BLCorner">
       <mousebind action="Press" button="Right">
@@ -421,6 +422,7 @@
           <command>amixer set Master toggle</command>
         </action>
       </mousebind>
+    </context>
     <!-- ###### -->
     <context name="Root">
       <!-- Menus -->
