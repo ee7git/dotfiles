@@ -4,8 +4,7 @@ Version=1.0
 Encoding=UTF-8
 Type=X-XFCE-Helper
 X-XFCE-Category=TerminalEmulator
-X-XFCE-CommandsWithParameter=mate-terminal "%s"
-Icon=mate-terminal
-Name=mate-terminal
+X-XFCE-CommandsWithParameter=terminator "%s"
+Icon=terminator
+Name=terminator
 X-XFCE-Commands=mate-terminal
-
