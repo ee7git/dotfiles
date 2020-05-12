@@ -4,8 +4,8 @@
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1558058295112062-1</unique-id>
-	<command>mate-terminal --maximize %F</command>
-	<description>Example for a custom action</description>
+	<command>terminator --maximize %F</command>
+	<description>Open terminal here</description>
 	<patterns>*</patterns>
 	<startup-notify/>
 	<directories/>
