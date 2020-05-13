@@ -9,6 +9,7 @@ Videos
 
 .bash_history
 .bash_logout
+.bash_it
 
 .ssh/*.pem
 .ssh/id_rsa
@@ -20,3 +21,5 @@ Videos
 .viminfo
 .pki
 .fzf
+
+README.md
