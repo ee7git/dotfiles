@@ -102,6 +102,6 @@ alias gts='git status'
 alias stng='ssh -i "/home/warren/.ssh/stng.pem" ubuntu@ec2-18-229-136-89.sa-east-1.compute.amazonaws.com'
 #alias mysql_aws='mysql -u user -p -h host_name -P 3306'
 
-PS1=' [\u@\h \W]\$ '
+PS1='[\u \W]\$ '
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
