@@ -10,9 +10,17 @@ cp -a ~/tmp/. ~
 rm -r ~/tmp
 ```
 
-* Install `bash_it`
+* Install [Bash-It](https://github.com/Bash-it/bash-it)
 
 ```shell
 git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
 ~/.bash_it/install.sh --no-modify-config
+```
+
+* Install [Powerline fonts](https://github.com/powerline/fonts)
+
+```shell
+git clone --depth=1 https://github.com/powerline/fonts.git 
+./fonts/install.sh
+rm -rf fonts
 ```
