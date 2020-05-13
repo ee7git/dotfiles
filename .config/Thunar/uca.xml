@@ -4,7 +4,7 @@
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1558058295112062-1</unique-id>
-	<command>terminator --maximize %F</command>
+	<command>terminator --maximise %F</command>
 	<description>Open terminal here</description>
 	<patterns>*</patterns>
 	<startup-notify/>

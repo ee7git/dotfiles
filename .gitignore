@@ -1,14 +1,22 @@
 
-Desktop/**
-Documents/**
-Downloads/**
-Music/**
-Playground/**
-Projects/**
-Videos/**
+Desktop
+Documents
+Downloads
+Music
+Playground
+Projects
+Videos
 
 .bash_history
-.bash_it/**
 .bash_logout
 
-.dotfiles/**
+.ssh/*.pem
+.ssh/id_rsa
+
+.dotfiles
+
+.cache
+
+.viminfo
+.pki
+.fzf
