@@ -6,6 +6,6 @@ Name=vim
 GenericName=Text Editor
 Comment=Edit text files
 Keywords=Text;editor;
-Exec=/usr/bin/terminator -e "/usr/bin/vim %F" --maximize
+Exec=/usr/bin/terminator -e "/usr/bin/vim %F" --maximise
 Icon=gvim
 MimeType=text/plain

@@ -7,4 +7,4 @@ X-XFCE-Category=TerminalEmulator
 X-XFCE-CommandsWithParameter=terminator "%s"
 Icon=terminator
 Name=terminator
-X-XFCE-Commands=mate-terminal
+X-XFCE-Commands=terminator
