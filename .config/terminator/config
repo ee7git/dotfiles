@@ -11,6 +11,7 @@
     background_type = transparent
     cursor_color = "#aaaaaa"
     font = Roboto Mono Light for Powerline Light 8
+    foreground_color = "#f3f3f3"
     show_titlebar = False
     scrollbar_position = hidden
     use_system_font = False
