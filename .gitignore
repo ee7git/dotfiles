@@ -15,11 +15,10 @@ Videos
 .ssh/id_rsa
 
 .dotfiles
-
 .cache
-
 .viminfo
 .pki
 .fzf
+.fehbg
 
 README.md

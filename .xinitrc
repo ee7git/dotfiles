@@ -49,17 +49,17 @@ xcompmgr &
 
 # Feh wallpaper
 slide_wallpaper() {
-time_out="1800"
-if [ ! -z "${1}" ]
-then
-    time_out="${1}"
-fi
-
-while [[ true ]]; do
-   feh --bg-fill -no-fehbg --randomize ~/.wallpapers/*
-   sleep ${time_out}
-done
+  time_out="1800"
+  if [ ! -z "${1}" ]
+  then
+      time_out="${1}"
+  fi
+  
+  while [[ true ]]; do
+     feh --bg-fill -no-fehbg --randomize ~/.wallpapers/*
+     sleep ${time_out}
+  done
 }
-(sleep 2 && slide_wallpaper ) &
+(sleep 2 && slide_wallpaper) &
 
 exec openbox-session
