@@ -1,0 +1,25 @@
+[global_config]
+[keybindings]
+  zoom_in = <Primary>KP_Add
+  zoom_out = <Primary>KP_Subtract
+  split_horiz = <Alt>End
+  split_vert = <Alt>Page_Down
+  close_term = <Alt>Delete
+[profiles]
+  [[default]]
+    background_darkness = 0.93
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Roboto Mono 8
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

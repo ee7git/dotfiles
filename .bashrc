@@ -12,7 +12,7 @@
 #esac
 
 # Path to the bash it configuration
-export BASH_IT="/home/warren/.bash-it"
+export BASH_IT="${HOME}/.bash_it"
 
 # Lock and Load a custom theme file.
 # Leave empty to disable theming.
@@ -83,25 +83,25 @@ alias dfp='dotfile push'
 alias duckdns-update='cd ${HOME} && ./.duckdns.sh'
 
 # Git
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push'
-alias gst='git status'
+alias gta='git add'
+alias gtc='git commit -m'
+alias gtp='git push'
+alias gts='git status'
 
 # Docker
-alias dcls='docker container ls -a'
-alias dcrm='docker container rm -f'
-alias dcrun='docker container run'
-alias dils='docker image ls -a'
-alias dirm='docker image rm -f'
-alias dtest='docker build -t test . && docker container run -p 80:3000 -it --name testy test'
-alias dtestrm='docker container rm -f testy && docker image rm -f test'
+# alias dcls='docker container ls -a'
+# alias dcrm='docker container rm -f'
+# alias dcrun='docker container run'
+# alias dils='docker image ls -a'
+# alias dirm='docker image rm -f'
+# alias dtest='docker build -t test . && docker container run -p 80:3000 -it --name testy test'
+# alias dtestrm='docker container rm -f testy && docker image rm -f test'
 
 #alias astng_ohaio='ssh -i "/home/warren/.ssh/astng.pem" ubuntu@ec2-18-219-244-226.us-east-2.compute.amazonaws.com'
 #alias astng_brazil='ssh -i "/home/warren/.ssh/astng_brazil.pem" ubuntu@ec2-18-231-188-3.sa-east-1.compute.amazonaws.com'
 alias stng='ssh -i "/home/warren/.ssh/stng.pem" ubuntu@ec2-18-229-136-89.sa-east-1.compute.amazonaws.com'
 #alias mysql_aws='mysql -u user -p -h host_name -P 3306'
 
-PS1='[\u@\h \W]\$ '
+PS1=' [\u@\h \W]\$ '
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
