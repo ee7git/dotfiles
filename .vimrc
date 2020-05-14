@@ -215,6 +215,7 @@ nnoremap <leader>N :set number relativenumber<CR>
 " TODO - Make the powerline fonts work
 " https://github.com/powerline/fonts
 
+let g:powerline_pycmd = 'py3'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_theme = 'luna'
