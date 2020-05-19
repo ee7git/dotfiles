@@ -1,10 +1,10 @@
-<?xml encoding="UTF-8" version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <actions>
 <action>
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1558058295112062-1</unique-id>
-	<command>terminator --maximise %F</command>
+	<command>terminator --maximise --working-directory=%F</command>
 	<description>Open terminal here</description>
 	<patterns>*</patterns>
 	<startup-notify/>
